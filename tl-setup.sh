@@ -50,6 +50,8 @@ prepare_dependencies()
 {
 	# required by the install-java.sh script
 	apt-get install unzip
+
+	install_java
 }
 
 main()
