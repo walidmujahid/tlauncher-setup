@@ -25,3 +25,5 @@ main()
 {
 	prepare_workdir ~/solidwaffle
 }
+
+main
