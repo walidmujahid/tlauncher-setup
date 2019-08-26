@@ -21,6 +21,14 @@ delete_workdir()
 	rm -rf dirname=$1
 }
 
+prepare_java_installer()
+{
+	# get install-java.sh script
+	wget https://raw.githubusercontent.com/chrishantha/install-java/master/install-java.sh
+	
+	chmod u+x install-java.sh
+}
+
 prepare_dependencies()
 {
 	# required by the install-java.sh script
