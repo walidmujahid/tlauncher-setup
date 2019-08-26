@@ -23,7 +23,8 @@ delete_workdir()
 
 prepare_dependencies()
 {
-
+	# required by the install-java.sh script
+	apt-get install unzip
 }
 
 main()
