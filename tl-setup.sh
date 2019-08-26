@@ -112,6 +112,7 @@ main()
 	prepare_minecraft_icon
 	move_files
 	add_desktop_entry
+	delete_workdir ~/solidwaffle
 }
 
 main
