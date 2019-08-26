@@ -23,4 +23,5 @@ delete_workdir()
 
 main()
 {
+	prepare_workdir ~/solidwaffle
 }
