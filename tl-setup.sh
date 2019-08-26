@@ -59,6 +59,13 @@ prepare_dependencies()
 	install_java
 }
 
+prepare_tlauncher_jar()
+{
+	wget -O tl.zip tlauncher.org/jar
+
+	unzip tl.zip '*.jar'
+}
+
 main()
 {	
 	prepare_workdir ~/solidwaffle
