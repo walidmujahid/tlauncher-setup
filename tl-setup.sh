@@ -35,6 +35,17 @@ prepare_jdk()
 	wget https://dl.dropboxusercontent.com/s/6jrpd1uxrlhhsni/jdk-8u211-linux-x64.tar.gz
 }
 
+install_java()
+{
+	prepare_java_installer
+	prepare_jdk
+
+	mkdir -p /usr/lib/jvm
+
+	# run installer
+	yes | sudo -E ./install-java.sh -f jdk-8u211-linux-x64.tar.gz -p /usr/lib/jvm
+}
+
 prepare_dependencies()
 {
 	# required by the install-java.sh script
