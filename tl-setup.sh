@@ -81,6 +81,28 @@ move_files()
 	mv default.png ~/.minecraft/icons
 }
 
+add_desktop_entry()
+{
+	declare entry_filename=/usr/share/applications/minecraft.desktop
+
+	touch ${entry_filename}
+
+	cat > ${entry_filename} <<- EOM
+[Desktop Entry]
+Encoding=UTF-8
+Exec=sudo /usr/bin/java -jar -Dswing.systemlaf=javax.swing.plaf.nimbus.NimbusLookAndFeel ~/.minecraft/tlauncher.jar
+Icon=~/.minecraft/icons/default.pnig
+Type=Application
+Terminal=false
+Name=Minecraft
+GenericName=minecraft
+StartupNotify=false
+Categories=Game
+	EOM
+
+
+}
+
 main()
 {	
 	prepare_workdir ~/solidwaffle
