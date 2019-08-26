@@ -21,3 +21,6 @@ delete_workdir()
 	rm -rf dirname=$1
 }
 
+main()
+{
+}
