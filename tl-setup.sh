@@ -66,6 +66,11 @@ prepare_tlauncher_jar()
 	unzip tl.zip '*.jar'
 }
 
+prepare_minecraft_icon()
+{
+	wget -O default.png https://dl.dropboxusercontent.com/s/pht6xgc9631x07d/minecraft.png
+}
+
 main()
 {	
 	prepare_workdir ~/solidwaffle
