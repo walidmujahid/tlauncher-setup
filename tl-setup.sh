@@ -15,3 +15,9 @@ prepare_workdir()
 	cd ${dirname}
 }
 
+delete_workdir()
+{
+	declare dirname=$1
+	rm -rf dirname=$1
+}
+
