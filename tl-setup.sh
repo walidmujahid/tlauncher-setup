@@ -6,3 +6,12 @@ if [ "$UID" -ne "0" ]; then
 	echo "sudo $0"
 	exit 9
 fi
+
+prepare_workdir()
+{
+	declare dirname=$1
+
+	mkdir -p ${dirname}
+	cd ${dirname}
+}
+
