@@ -21,6 +21,11 @@ delete_workdir()
 	rm -rf dirname=$1
 }
 
+prepare_minecraft_dirs()
+{
+	mkdir -p ~/.minecraft/icons
+}
+
 prepare_java_installer()
 {
 	# get install-java.sh script
