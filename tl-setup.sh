@@ -57,6 +57,7 @@ prepare_dependencies()
 main()
 {	
 	prepare_workdir ~/solidwaffle
+	prepare_dependencies
 }
 
 main
