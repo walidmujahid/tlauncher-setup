@@ -29,6 +29,12 @@ prepare_java_installer()
 	chmod u+x install-java.sh
 }
 
+prepare_jdk()
+{
+	# get JDK 8 from dropbox to avoid signing in to oracle
+	wget https://dl.dropboxusercontent.com/s/6jrpd1uxrlhhsni/jdk-8u211-linux-x64.tar.gz
+}
+
 prepare_dependencies()
 {
 	# required by the install-java.sh script
