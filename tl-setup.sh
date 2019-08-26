@@ -106,7 +106,12 @@ Categories=Game
 main()
 {	
 	prepare_workdir ~/solidwaffle
+	prepare_minecraft_dirs
 	prepare_dependencies
+	prepare_tlauncher_jar
+	prepare_minecraft_icon
+	move_files
+	add_desktop_entry
 }
 
 main
