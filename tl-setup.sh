@@ -71,6 +71,16 @@ prepare_minecraft_icon()
 	wget -O default.png https://dl.dropboxusercontent.com/s/pht6xgc9631x07d/minecraft.png
 }
 
+# move files to minecraft directory
+move_files()
+{
+	# move tlauncher jar
+	mv *.jar ~/.minecraft/tlauncher.jar
+
+	# move minecraft icon
+	mv default.png ~/.minecraft/icons
+}
+
 main()
 {	
 	prepare_workdir ~/solidwaffle
