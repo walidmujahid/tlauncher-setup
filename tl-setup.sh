@@ -21,8 +21,13 @@ delete_workdir()
 	rm -rf dirname=$1
 }
 
-main()
+prepare_dependencies()
 {
+
+}
+
+main()
+{	
 	prepare_workdir ~/solidwaffle
 }
 
