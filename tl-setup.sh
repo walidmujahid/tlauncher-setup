@@ -23,7 +23,7 @@ delete_workdir()
 
 prepare_minecraft_dirs()
 {
-	mkdir -p ~/.minecraft/icons
+	sudo -u $USER mkdir -p ~/.minecraft/icons
 }
 
 prepare_java_installer()
@@ -75,10 +75,10 @@ prepare_minecraft_icon()
 move_files()
 {
 	# move tlauncher jar
-	mv *.jar ~/.minecraft/tlauncher.jar
+	sudo -u $USER mv *.jar ~/.minecraft/tlauncher.jar
 
 	# move minecraft icon
-	mv default.png ~/.minecraft/icons
+	sudo -u $USER mv default.png ~/.minecraft/icons
 }
 
 add_desktop_entry()
