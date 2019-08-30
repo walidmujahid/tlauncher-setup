@@ -18,12 +18,12 @@ prepare_workdir()
 delete_workdir()
 {
 	declare dirname=$1
-	rm -rf dirname=$1
+	rm -rf ${dirname}
 }
 
 prepare_minecraft_dirs()
 {
-	sudo -u $USER mkdir -p ~/.minecraft/icons
+	mkdir -p ~/.minecraft/icons
 }
 
 prepare_java_installer()
@@ -31,7 +31,7 @@ prepare_java_installer()
 	# get install-java.sh script
 	wget https://raw.githubusercontent.com/chrishantha/install-java/master/install-java.sh
 	
-	chmod u+x install-java.sh
+	chmod +x install-java.sh
 }
 
 prepare_jdk()
@@ -64,6 +64,7 @@ prepare_tlauncher_jar()
 	wget -O tl.zip tlauncher.org/jar
 
 	unzip tl.zip '*.jar'
+	find . -name "*.jar" -exec chmod +x {} \;
 }
 
 prepare_minecraft_icon()
@@ -75,10 +76,10 @@ prepare_minecraft_icon()
 move_files()
 {
 	# move tlauncher jar
-	sudo -u $USER mv *.jar ~/.minecraft/tlauncher.jar
+	mv *.jar ~/.minecraft/tlauncher.jar
 
 	# move minecraft icon
-	sudo -u $USER mv default.png ~/.minecraft/icons
+	mv default.png ~/.minecraft/icons
 }
 
 add_desktop_entry()
@@ -90,7 +91,7 @@ add_desktop_entry()
 	cat > ${entry_filename} <<- EOM
 [Desktop Entry]
 Encoding=UTF-8
-Exec=sudo /usr/bin/java -jar -Dswing.systemlaf=javax.swing.plaf.nimbus.NimbusLookAndFeel ~/.minecraft/tlauncher.jar
+Exec=pkexec /usr/bin/java -jar -Dswing.systemlaf=javax.swing.plaf.nimbus.NimbusLookAndFeel ~/.minecraft/tlauncher.jar
 Icon=~/.minecraft/icons/default.pnig
 Type=Application
 Terminal=false
@@ -113,6 +114,8 @@ main()
 	move_files
 	add_desktop_entry
 	delete_workdir ~/solidwaffle
+
+	chmod -R +x ~/.minecraft
 }
 
 main
