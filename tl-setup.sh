@@ -92,7 +92,7 @@ add_desktop_entry()
 [Desktop Entry]
 Encoding=UTF-8
 Exec=pkexec /usr/bin/java -jar -Dswing.systemlaf=javax.swing.plaf.nimbus.NimbusLookAndFeel ~/.minecraft/tlauncher.jar
-Icon=~/.minecraft/icons/default.pnig
+Icon=~/.minecraft/icons/default.png
 Type=Application
 Terminal=false
 Name=Minecraft
