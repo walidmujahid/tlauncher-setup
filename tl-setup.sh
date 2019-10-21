@@ -53,7 +53,7 @@ install_java()
 
 prepare_dependencies()
 {
-	# required by the install-java.sh script
+	# unzip required by the install-java.sh script
 	apt-get install unzip i3-wm -y
 
 	install_java
