@@ -54,7 +54,7 @@ install_java()
 prepare_dependencies()
 {
 	# unzip required by the install-java.sh script
-	apt-get install unzip i3-wm -y
+	apt-get install unzip i3-wm lxterminal -y
 
 	install_java
 }
@@ -91,7 +91,7 @@ add_desktop_entry()
 	cat > ${entry_filename} <<- EOM
 [Desktop Entry]
 Encoding=UTF-8
-Exec=i3-sensible-terminal -e "pkexec env DISPLAY=$DISPLAY XAUTHORITY=$XAUTHORITY /usr/bin/java -jar -Dswing.systemlaf=javax.swing.plaf.nimbus.NimbusLookAndFeel ~/.minecraft/tlauncher.jar"
+Exec=lxterminal -e "pkexec env DISPLAY=$DISPLAY XAUTHORITY=$XAUTHORITY /usr/bin/java -jar -Dswing.systemlaf=javax.swing.plaf.nimbus.NimbusLookAndFeel ~/.minecraft/tlauncher.jar"
 Icon=~/.minecraft/icons/default.png
 Type=Application
 Terminal=false
